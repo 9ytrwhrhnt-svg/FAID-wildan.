@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#070707">
+<title>Faid & Wildan — Wedding Invitation</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Naskh+Arabic:wght@400;500;600&display=swap');
+:root{--gold:#d8b66b;--cream:#f5ead7;--bg:#060606}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--cream);font-family:"Noto Naskh Arabic",serif;overflow-x:hidden}
+button{font:inherit}.screen{min-height:100svh;position:relative;overflow:hidden}
+#opening{display:flex;align-items:center;justify-content:center;background:#050505}
+.scene{position:absolute;inset:-4%;background:url("wedding-scene.png") center/cover no-repeat;filter:saturate(.9) contrast(1.05);transform:scale(1.02);transition:transform 2.8s cubic-bezier(.2,.8,.2,1),filter 2.8s}
+#opening.active .scene{transform:scale(1.12);filter:saturate(1.08) brightness(1.08)}
+.vignette{position:absolute;inset:0;background:radial-gradient(circle at 50% 45%,transparent 20%,rgba(0,0,0,.12) 48%,rgba(0,0,0,.78) 100%)}
+.mist{position:absolute;inset:-20%;background:radial-gradient(circle,rgba(255,214,129,.15),transparent 30%);opacity:.45;filter:blur(25px);animation:mist 7s ease-in-out infinite alternate}
+@keyframes mist{to{transform:translate(5%,-3%) scale(1.2);opacity:.7}}
+.sparkles{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(circle,rgba(255,224,158,.9) 0 1px,transparent 1.7px);background-size:73px 83px;opacity:.16;animation:sparks 8s linear infinite}
+@keyframes sparks{to{background-position:100px -180px}}
+.opening-content{position:relative;z-index:5;text-align:center;padding:22px;transition:opacity .8s,transform .8s}
+#opening.active .opening-content{opacity:0;transform:translateY(-18px);pointer-events:none}
+.eyebrow{font:500 13px "Cormorant Garamond";letter-spacing:6px;color:var(--gold);direction:ltr}
+.names{font:500 clamp(54px,15vw,110px) "Cormorant Garamond";letter-spacing:2px;direction:ltr;margin:16px 0 2px;text-shadow:0 4px 30px #000}
+.names span{color:var(--gold);font-size:.56em;margin:0 7px}
+.sub{font-size:18px;color:#e6dac6}
+.open-btn{margin-top:30px;border:1px solid var(--gold);border-radius:999px;padding:14px 34px;background:rgba(5,5,5,.48);color:#f2d89b;box-shadow:0 0 28px rgba(216,182,107,.18);cursor:pointer;backdrop-filter:blur(6px);transition:.25s}
+.open-btn:active{transform:scale(.96)}
+.sound{position:absolute;right:18px;bottom:18px;z-index:6;color:#dbc28d;font-size:12px;opacity:.9}
+.doors{position:absolute;inset:0;z-index:4;pointer-events:none}
+.door{position:absolute;top:0;width:50%;height:100%;background:linear-gradient(90deg,rgba(5,5,5,.92),rgba(35,27,16,.72));border-bottom:1px solid rgba(216,182,107,.4);transition:transform 1.9s cubic-bezier(.72,0,.2,1)}
+.door.left{left:0;transform-origin:left center;border-right:1px solid rgba(216,182,107,.35)}
+.door.right{right:0;transform-origin:right center;border-left:1px solid rgba(216,182,107,.35)}
+.door:after{content:"";position:absolute;top:0;bottom:0;width:1px;background:linear-gradient(transparent,var(--gold),transparent);opacity:.45}
+.door.left:after{right:0}.door.right:after{left:0}
+.door-mark{position:absolute;top:42%;font:500 clamp(60px,15vw,120px) "Cormorant Garamond";color:#c99f55;text-shadow:0 0 24px rgba(216,182,107,.35)}
+.left .door-mark{right:12%}.right .door-mark{left:12%}
+#opening.active .door.left{transform:translateX(-100%)}#opening.active .door.right{transform:translateX(100%)}
+.flash{position:absolute;inset:0;background:#fff;z-index:3;opacity:0;pointer-events:none}
+#opening.active .flash{animation:flash 1.8s ease .75s}
+@keyframes flash{0%,65%{opacity:0}74%{opacity:.9}100%{opacity:0}}
+.transition-text{position:absolute;z-index:7;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;opacity:0;pointer-events:none}
+#opening.active .transition-text{animation:quote 3.5s ease 1.25s forwards}
+.transition-text div{background:rgba(3,3,3,.35);padding:25px 30px;border-radius:18px;backdrop-filter:blur(4px)}
+.ar{font-size:clamp(25px,6vw,43px);line-height:1.8}.en{font:italic 23px "Cormorant Garamond";direction:ltr;color:#ead49e;margin-top:6px}
+@keyframes quote{0%,18%{opacity:0;transform:scale(.96)}35%,70%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1.03)}}
+.details{padding:80px 20px;background:radial-gradient(circle at 50% 10%,#211b12,transparent 35%),#080808;text-align:center}
+.inner{max-width:900px;margin:auto}.gold{color:var(--gold)}.title{font:500 clamp(35px,9vw,65px) "Cormorant Garamond";direction:ltr}.line{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:25px 0}
+.info{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:30px 0}.info div{border:1px solid rgba(216,182,107,.25);padding:20px 8px;background:rgba(255,255,255,.025)}.ico{font-size:22px}.label{font:13px "Cormorant Garamond";letter-spacing:2px;color:var(--gold);direction:ltr}.value{font-size:18px;margin-top:5px}
+.count{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:35px 0}.unit{border:1px solid rgba(216,182,107,.3);padding:16px 4px}.num{display:block;font:500 40px "Cormorant Garamond";direction:ltr;color:#e8ca84}.lbl{font-size:12px;color:#bfb09a}
+.map{display:inline-block;margin-top:8px;padding:12px 28px;border:1px solid var(--gold);border-radius:999px;color:#e7d19d;text-decoration:none}
+.music{margin:45px auto 10px;max-width:520px;border:1px solid rgba(216,182,107,.3);padding:20px;border-radius:20px;background:rgba(255,255,255,.025)}.music-title{font:500 28px "Cormorant Garamond";direction:ltr}.music button{border:1px solid var(--gold);background:transparent;color:#e6ce96;border-radius:50%;width:54px;height:54px;margin-top:12px}
+.footer{min-height:55svh;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(rgba(5,5,5,.35),rgba(5,5,5,.85)),url("wedding-scene.png") center/cover fixed;padding:30px}.final{font:italic 31px "Cormorant Garamond";direction:ltr}.final-ar{font-size:23px;margin-top:15px}
+@media(max-width:600px){.info{grid-template-columns:1fr}.count{gap:5px}.num{font-size:30px}.door-mark{top:45%}}
+</style>
+</head>
+<body>
+<section id="opening" class="screen">
+<div class="scene"></div><div class="vignette"></div><div class="mist"></div><div class="sparkles"></div>
+<div class="opening-content">
+<div class="eyebrow">WEDDING INVITATION</div>
+<div class="names">FAID <span>&</span> WILDAN</div>
+<div class="sub">حكاية قلبين... وبداية عمرٍ واحد 🤍</div>
+<button class="open-btn" id="openBtn">OPEN INVITATION ✦</button>
+</div>
+<div class="doors"><div class="door left"><span class="door-mark">F</span></div><div class="door right"><span class="door-mark">W</span></div></div>
+<div class="flash"></div>
+<div class="transition-text"><div><div class="ar">ومن هنا تبدأ أجمل حكاياتنا</div><div class="en">And from here, our most beautiful story begins.</div></div></div>
+<div class="sound">♫ الموسيقى تبدأ عند فتح الدعوة</div>
+</section>
+
+<section class="details" id="details">
+<div class="inner">
+<div class="gold">TOGETHER FOREVER</div>
+<div class="title">Faid & Wildan</div>
+<div class="line"></div>
+<p style="font-size:20px;line-height:2">بكل الحب والفرح، ندعوكم لمشاركتنا أجمل ليلة في بداية فصلنا الجديد.</p>
+<div class="info">
+<div><div class="ico">♡</div><div class="label">DATE</div><div class="value">09 · 10 · 2026</div></div>
+<div><div class="ico">◷</div><div class="label">TIME</div><div class="value">6:00 PM — 9:00 PM</div></div>
+<div><div class="ico">⌖</div><div class="label">VENUE</div><div class="value">مدينة حمورابي — VIP C</div></div>
+</div>
+
+<div class="gold">COUNTDOWN TO OUR FOREVER</div>
+<div class="count">
+<div class="unit"><span class="num" id="d">0</span><span class="lbl">DAYS</span></div>
+<div class="unit"><span class="num" id="h">00</span><span class="lbl">HOURS</span></div>
+<div class="unit"><span class="num" id="m">00</span><span class="lbl">MINUTES</span></div>
+<div class="unit"><span class="num" id="s">00</span><span class="lbl">SECONDS</span></div>
+</div>
+
+<a class="map" href="https://www.google.com/maps/search/?api=1&query=مدينة+حمورابي+VIP+C" target="_blank" rel="noopener">📍 OPEN LOCATION</a>
+
+<div class="music">
+<div class="gold">OUR SONG</div>
+<div class="music-title">Faid & Wildan ♫</div>
+<audio id="audio" src="wedding-song.mp3" preload="auto"></audio>
+<button id="play">▶</button>
+</div>
+
+<div class="line"></div>
+<p style="font-size:19px;line-height:2">وجودكم بيننا هو أجمل ما يكمّل فرحتنا 🤍</p>
+</div>
+</section>
+
+<footer class="footer">
+<div><div class="final">Two hearts. One journey. Forever.</div><div class="final-ar">قلبان، طريقٌ واحد، وعمرٌ من الحب.</div><div class="gold" style="margin-top:22px">FAID & WILDAN · 09.10.2026</div></div>
+</footer>
+
+<script>
+const opening=document.getElementById('opening'), audio=document.getElementById('audio');
+document.getElementById('openBtn').addEventListener('click',()=>{
+ opening.classList.add('active');
+ audio.play().catch(()=>{});
+ setTimeout(()=>document.getElementById('details').scrollIntoView({behavior:'smooth'}),4700);
+});
+const play=document.getElementById('play');
+play.onclick=()=>{if(audio.paused){audio.play();play.textContent='Ⅱ'}else{audio.pause();play.textContent='▶'}};
+audio.onended=()=>play.textContent='▶';
+
+const target=new Date('2026-10-09T18:00:00+03:00').getTime();
+function tick(){
+ let sec=Math.max(0,Math.floor((target-Date.now())/1000));
+ document.getElementById('d').textContent=Math.floor(sec/86400);
+ document.getElementById('h').textContent=String(Math.floor(sec%86400/3600)).padStart(2,'0');
+ document.getElementById('m').textContent=String(Math.floor(sec%3600/60)).padStart(2,'0');
+ document.getElementById('s').textContent=String(sec%60).padStart(2,'0');
+}
+tick();setInterval(tick,1000);
+</script>
+</body>
+</html>
